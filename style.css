@@ -1,0 +1,193 @@
+body {
+    background-color: #1e1e2f; /* Fond sombre principal (bleu très foncé/violet) */
+    color: #c0c0e0; /* Texte clair général (lavande clair) */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.container {
+    max-width: 750px; /* Un peu plus large pour les champs */
+    margin: 0 auto;
+    background-color: #282a3f; /* Fond des sections (bleu foncé/gris) */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border: 1px solid #3a3c58;
+}
+
+h1 {
+    text-align: center;
+    color: #82aaff; /* Bleu clair pour titre principal */
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+h2 {
+    color: #61dafb; /* Cyan/Bleu clair pour les titres de section */
+    border-bottom: 2px solid #4a4e69; /* Ligne de séparation plus sombre */
+    padding-bottom: 0.4em;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+h2:first-of-type {
+    margin-top: 0;
+}
+
+h3 {
+    color: #c3e88d; /* Vert clair pour les sous-titres des subsections */
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.15em;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3a3c58; /* Séparateur de section plus subtil */
+}
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.subsection {
+    padding: 15px 20px;
+    background-color: #2c2e43; /* Fond légèrement différent pour subsections */
+    border: 1px solid #3a3c58;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #a0a8d3; /* Texte des labels (lavande) */
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #161625; /* Fond très sombre pour les inputs */
+    color: #e0e0ff; /* Texte des inputs clair (blanc lavande) */
+    border: 1px solid #4a4e69; /* Bordure des inputs */
+    border-radius: 4px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #61dafb; /* Bordure en focus (cyan) */
+    box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.25); /* Ombre de focus */
+    outline: none;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+textarea#workflowJsonEditor {
+    min-height: 150px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; /* Police mono */
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+button {
+    background-color: #007bff; /* Bleu primaire (style VS Code) */
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    margin: 10px 5px 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+button:hover {
+    background-color: #0056b3; /* Bleu plus sombre au survol */
+}
+button:disabled {
+    background-color: #4a4e69; /* Fond pour boutons désactivés */
+    color: #888aa0;
+    cursor: not-allowed;
+}
+.button-group {
+    margin-top: 10px;
+}
+.button-group button {
+    margin-right: 10px;
+}
+
+/* Style spécifique pour le bouton Seed Aléatoire */
+#randomSeedBtn {
+    background-color: #565f7c; /* Un gris-bleu */
+    margin-left: 10px;
+    padding: 9px 12px; /* Un peu moins large */
+}
+#randomSeedBtn:hover {
+    background-color: #6b7798;
+}
+
+
+#workflowPath, #imagePath {
+    margin-top: 8px;
+    margin-bottom: 10px; /* Ajouté pour espacement */
+    padding: 10px;
+    background-color: #2c2e43; /* Fond pour zones de statut */
+    border-left: 4px solid #007bff; /* Bordure bleue */
+    color: #c0c0e0;
+    font-size: 0.9em;
+    word-wrap: break-word;
+    border-radius: 0 3px 3px 0;
+}
+
+#status {
+    margin-top: 8px;
+    padding: 12px;
+    background-color: #2c2e43;
+    border: 1px solid #3a3c58;
+    border-left: 4px solid #61dafb; /* Cyan pour statut */
+    font-size: 0.9em;
+    word-wrap: break-word;
+    border-radius: 4px;
+    min-height: 50px;
+}
+#status pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #161625; /* Fond pour le pre dans le statut */
+    padding: 10px;
+    border: 1px solid #4a4e69;
+    margin-top: 8px;
+    color: #e0e0ff;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    line-height: 1.4;
+}
+
+select {
+    appearance: none; /* Pour styler la flèche si désiré, mais peut être complexe */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23c0c0e0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px auto;
+    padding-right: 30px; /* Espace pour la flèche */
+}

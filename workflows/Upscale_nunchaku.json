@@ -1,0 +1,295 @@
+{
+  "1": {
+    "inputs": {
+      "string": [
+        "10",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber",
+    "_meta": {
+      "title": "String to Number"
+    }
+  },
+  "2": {
+    "inputs": {
+      "model_name": "4x_NMKD-Siax_200k.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Charger le modèle de mise à l'échelle"
+    }
+  },
+  "4": {
+    "inputs": {
+      "multiplier": [
+        "1",
+        0
+      ],
+      "width": [
+        "5",
+        0
+      ],
+      "height": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "Quick Resolution Multiply (WLSH)",
+    "_meta": {
+      "title": "Quick Resolution Multiply (WLSH)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "6": {
+    "inputs": {
+      "a": [
+        "4",
+        0
+      ],
+      "b": 2,
+      "operation": "divide"
+    },
+    "class_type": "easy mathInt",
+    "_meta": {
+      "title": "Math Int"
+    }
+  },
+  "7": {
+    "inputs": {
+      "a": [
+        "4",
+        1
+      ],
+      "b": 2,
+      "operation": "divide"
+    },
+    "class_type": "easy mathInt",
+    "_meta": {
+      "title": "Math Int"
+    }
+  },
+  "8": {
+    "inputs": {
+      "model_path": "svdq-int4-CreArt_Ultimate",
+      "cache_threshold": 0,
+      "attention": "nunchaku-fp16",
+      "cpu_offload": "auto",
+      "device_id": 0,
+      "data_type": "bfloat16",
+      "i2f_mode": "enabled"
+    },
+    "class_type": "NunchakuFluxDiTLoader",
+    "_meta": {
+      "title": "Nunchaku FLUX DiT Loader"
+    }
+  },
+  "9": {
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "GuidageFlux"
+    }
+  },
+  "10": {
+    "inputs": {
+      "string": "2"
+    },
+    "class_type": "Simple String",
+    "_meta": {
+      "title": "Simple String"
+    }
+  },
+  "11": {
+    "inputs": {
+      "max_shift": 1.15,
+      "base_shift": 0.5,
+      "width": 896,
+      "height": 1152,
+      "model": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModèleÉchantillonnageFlux"
+    }
+  },
+  "12": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Charger VAE"
+    }
+  },
+  "13": {
+    "inputs": {
+      "model_type": "flux",
+      "text_encoder1": "t5xxl_fp16.safetensors",
+      "text_encoder2": "clip_l.safetensors",
+      "t5_min_length": 512,
+      "use_4bit_t5": "disable",
+      "int4_model": "none"
+    },
+    "class_type": "NunchakuTextEncoderLoader",
+    "_meta": {
+      "title": "Nunchaku Text Encoder Loader"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "20250519_2002_Futuristic New Wave Portrait_simple_compose_01jvmvapv5e25tkbzj8vax7nq8.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Charger Image"
+    }
+  },
+  "18": {
+    "inputs": {
+      "model_name": "2xESRGAN.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Charger le modèle de mise à l'échelle"
+    }
+  },
+  "20": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "factor": 2,
+      "upscale_model": [
+        "18",
+        0
+      ],
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "Upscale by Factor with Model (WLSH)",
+    "_meta": {
+      "title": "Upscale by Factor with Model (WLSH)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Enregistrer Image"
+    }
+  },
+  "23": {
+    "inputs": {
+      "upscale_by": [
+        "1",
+        1
+      ],
+      "seed": 7402677340295,
+      "steps": 6,
+      "cfg": 1,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "beta",
+      "denoise": 0.25000000000000006,
+      "mode_type": "Linear",
+      "tile_width": [
+        "6",
+        0
+      ],
+      "tile_height": [
+        "7",
+        0
+      ],
+      "mask_blur": 20,
+      "tile_padding": 56,
+      "seam_fix_mode": "None",
+      "seam_fix_denoise": 0.3,
+      "seam_fix_width": 64,
+      "seam_fix_mask_blur": 8,
+      "seam_fix_padding": 16,
+      "force_uniform_tiles": true,
+      "tiled_decode": false,
+      "image": [
+        "16",
+        0
+      ],
+      "model": [
+        "11",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "14",
+        0
+      ],
+      "vae": [
+        "12",
+        0
+      ],
+      "upscale_model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "UltimateSDUpscale",
+    "_meta": {
+      "title": "Ultimate SD Upscale"
+    }
+  },
+  "25": {
+    "inputs": {
+      "text": "detailed",
+      "clip": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  }
+}

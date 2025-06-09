@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lanceur ComfyUI Avancé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lanceur de Workflow ComfyUI</h1>
+
+        <div class="section">
+            <h2>Configuration ComfyUI & App</h2>
+            <label for="comfyUrl">URL API ComfyUI (ex: http://127.0.0.1:8188):</label>
+            <input type="text" id="comfyUrl" value="http://127.0.0.1:8188">
+            
+            <div>
+                <label for="savedConfigs">Sélectionner une configuration enregistrée:</label>
+                <select id="savedConfigs">
+                    <option value="">-- Aucune configuration --</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button id="saveConfigBtn">Exporter Config Actuelle</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>1. Charger le Workflow</h2>
+            <div>
+                <label for="savedWorkflows">Sélectionner un workflow local:</label>
+                <select id="savedWorkflows">
+                    <option value="">-- Choisir un workflow du dossier 'workflows' --</option>
+                </select>
+            </div>
+            <button id="selectWorkflowBtn">Charger un Autre Workflow (.json)</button>
+            <p id="workflowPath">Aucun workflow chargé.</p>
+            <label for="workflowJsonEditor">Aperçu/Édition du Workflow (JSON):</label>
+            <textarea id="workflowJsonEditor" placeholder="Le contenu du workflow apparaîtra ici..."></textarea>
+        </div>
+
+        <div class="section">
+            <h2>2. Paramètres Optionnels d'Injection</h2>
+
+            <div class="subsection">
+                <h3>A. Injection de Prompt Texte</h3>
+                <label for="promptText">Prompt à injecter (laisser vide si non utilisé):</label>
+                <textarea id="promptText" placeholder="Ex: a beautiful landscape..."></textarea>
+                <label for="promptNodeId">ID Nœud Cible Prompt (ex: 19):</label>
+                <input type="text" id="promptNodeId" placeholder="Ex: 19">
+                <label for="promptInputName">Nom Entrée Cible (généralement "text"):</label>
+                <input type="text" id="promptInputName" value="text" placeholder="Ex: text">
+            </div>
+
+            <div class="subsection">
+                <h3>B. Injection d'Image d'Entrée (pour Img2Img)</h3>
+                <p><strong>Pour une seule image :</strong></p>
+                <button id="selectImageBtn">Sélectionner UNE Image d'Entrée</button>
+                <p id="imagePath">Aucune image individuelle sélectionnée.</p>
+                
+                <hr style="margin: 20px 0;">
+
+                <p><strong>Pour un lot d'images (Img2Img en série) :</strong></p>
+                <button id="selectImageFolderBtn">Sélectionner un DOSSIER d'Images d'Entrée</button>
+                <p id="imageFolderPath">Aucun dossier d'images sélectionné.</p>
+
+                <label for="imageNodeId">ID Nœud Cible 'LoadImage' (ex: 10):</label>
+                <input type="text" id="imageNodeId" placeholder="Ex: 10">
+                <label for="imageInputName">Nom Entrée Cible (généralement "image"):</label>
+                <input type="text" id="imageInputName" value="image" placeholder="Ex: image">
+            </div>
+
+            <div class="subsection">
+                <h3>C. Contrôle du Seed</h3>
+                <label for="seedValue">Seed (vide = workflow/aléatoire; pour lot: seed initial, sera incrémenté):</label>
+                <input type="number" id="seedValue" placeholder="Ex: 12345">
+                <button id="randomSeedBtn">Seed Aléatoire</button>
+                <label for="seedNodeId">ID Nœud Cible Seed (ex: 37):</label>
+                <input type="text" id="seedNodeId" placeholder="Ex: 37">
+                <label for="seedInputName">Nom Entrée Cible (ex: "seed", "noise_seed"):</label>
+                <input type="text" id="seedInputName" value="seed" placeholder="Ex: seed">
+                <input type="checkbox" id="incrementSeedBatch" checked>
+                <label for="incrementSeedBatch" style="display: inline-block; margin-left: 5px; font-weight: normal;">Incrémenter le seed pour chaque image du lot</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Exécuter sur ComfyUI</h2>
+            <button id="runWorkflowBtn" disabled>Lancer le Workflow / le Lot</button>
+            <h3>Statut:</h3>
+            <div id="status">En attente...</div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>
