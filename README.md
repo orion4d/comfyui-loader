@@ -36,10 +36,7 @@ Une application de bureau construite avec Electron pour faciliter le lancement e
 
 1.  **Cloner le dépôt (ou télécharger les fichiers) :**
     ```bash
-    git clone https://github.com/VOTRE_NOM_UTILISATEUR/VOTRE_NOM_DEPOT.git
-    cd VOTRE_NOM_DEPOT
-    ```
-    *(Remplacez `VOTRE_NOM_UTILISATEUR/VOTRE_NOM_DEPOT` par l'URL réelle de votre dépôt)*
+[    git clone https://github.com/VOTRE_NOM_UTILISATEUR/VOTRE_NOM_DEPOT.gi
 
 2.  **Installer les dépendances :**
     Ouvrez un terminal ou une invite de commande dans le dossier du projet et exécutez :
