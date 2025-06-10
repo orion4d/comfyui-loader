@@ -116,4 +116,18 @@ Les contributions sont les bienvenues ! Veuillez ouvrir une issue pour discuter 
 
 ## Licence
 
-Ce projet est sous licence [MIT](./LICENSE).
+- **Auteur** : Philippe Joye (Orion4D)
+- **Licence** : [MIT](./LICENSE).
+
+<div align="center">
+
+### 🌟 **Soutenez le projet**
+
+Si ce projet vous a été utile, pensez à lui laisser une ⭐ sur GitHub !
+
+**Fait avec ❤️ pour la communauté open source**  
+**par Orion4D**
+
+[![Offrez-moi un café](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/orion4d)
+
+</div>
