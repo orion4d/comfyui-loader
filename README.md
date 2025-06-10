@@ -32,11 +32,19 @@ Une application de bureau construite avec Electron pour faciliter le lancement e
 *   **ComfyUI :** Une instance de ComfyUI doit être installée et en cours d'exécution. L'API de ComfyUI doit être accessible (par défaut : `http://127.0.0.1:8188`).
     *   Assurez-vous que les modèles, VAEs, et custom nodes requis par vos workflows sont correctement installés dans ComfyUI.
 
+### 🔍 Comment trouver l’ID d’un nœud
+
+- **Via JSON exporté** : exportez le workflow (`Save workflow`), ouvrez le `.json` et repérez `"id": <numéro>`.
+- **Via ComfyUI‑Manager** : installez ce plugin dans `custom_nodes`, activez l’option *Badge* ou *Node ID display* dans le menu “Manager”, et visualisez directement l’ID sur chaque node.
+- **Via une recherche dans JSON ou les logs** : en cas d’erreur (ex : `invalid_prompt`), repérez l’ID reporté (`Node ID '#84'`), puis faites un “Ctrl+F "id": 84” dans le JSON.
+
+
 ## Installation
 
 1.  **Cloner le dépôt (ou télécharger les fichiers) :**
     ```bash
-[   git clonehttps://github.com/orion4d/comfyui-loader.git
+    git clone https://github.com/VOTRE_NOM_UTILISATEUR/VOTRE_NOM_DEPOT.git
+    ```
 2.  **Installer les dépendances :**
     Ouvrez un terminal ou une invite de commande dans le dossier du projet et exécutez :
     ```bash
