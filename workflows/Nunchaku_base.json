@@ -1,0 +1,234 @@
+{
+  "1": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "2": {
+    "inputs": {
+      "noise": [
+        "36",
+        0
+      ],
+      "guider": [
+        "4",
+        0
+      ],
+      "sampler": [
+        "6",
+        0
+      ],
+      "sigmas": [
+        "20",
+        0
+      ],
+      "latent_image": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "ÉchantillonneurPersonnaliséAvancé"
+    }
+  },
+  "4": {
+    "inputs": {
+      "model": [
+        "21",
+        0
+      ],
+      "conditioning": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "GuideBasique"
+    }
+  },
+  "5": {
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "GuidageFlux"
+    }
+  },
+  "6": {
+    "inputs": {
+      "detail_amount": 0.30000000000000004,
+      "start": 0.10000000000000002,
+      "end": 0.8000000000000002,
+      "bias": 0.5500000000000002,
+      "exponent": 1.0000000000000002,
+      "start_offset": 0,
+      "end_offset": 0,
+      "fade": 0,
+      "smooth": false,
+      "cfg_scale_override": 0,
+      "sampler": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "DetailDaemonSamplerNode",
+    "_meta": {
+      "title": "Detail Daemon Sampler"
+    }
+  },
+  "18": {
+    "inputs": {
+      "model_path": "svdq-int4-CreArt_Ultimate",
+      "cache_threshold": 0,
+      "attention": "nunchaku-fp16",
+      "cpu_offload": "auto",
+      "device_id": 0,
+      "data_type": "bfloat16",
+      "i2f_mode": "enabled"
+    },
+    "class_type": "NunchakuFluxDiTLoader",
+    "_meta": {
+      "title": "Nunchaku FLUX DiT Loader"
+    }
+  },
+  "19": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "20": {
+    "inputs": {
+      "scheduler": "beta",
+      "steps": 10,
+      "denoise": 1,
+      "model": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "PlanificateurBasique"
+    }
+  },
+  "21": {
+    "inputs": {
+      "max_shift": 1.1500000000000001,
+      "base_shift": 0.5000000000000001,
+      "width": 896,
+      "height": 1152,
+      "model": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModèleÉchantillonnageFlux"
+    }
+  },
+  "26": {
+    "inputs": {
+      "model_type": "flux",
+      "text_encoder1": "t5xxl_fp16.safetensors",
+      "text_encoder2": "clip_l.safetensors",
+      "t5_min_length": 512,
+      "use_4bit_t5": "disable",
+      "int4_model": "none"
+    },
+    "class_type": "NunchakuTextEncoderLoader",
+    "_meta": {
+      "title": "Nunchaku Text Encoder Loader"
+    }
+  },
+  "27": {
+    "inputs": {
+      "samples": [
+        "2",
+        0
+      ],
+      "vae": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "30": {
+    "inputs": {
+      "vae_name": "ae.sft"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Charger VAE"
+    }
+  },
+  "32": {
+    "inputs": {
+      "ratio_selected": "16:9 [1344x768 landscape]",
+      "batch_size": 1
+    },
+    "class_type": "Empty Latent Ratio Select SDXL",
+    "_meta": {
+      "title": "Empty Latent Ratio Select SDXL (Mikey)"
+    }
+  },
+  "35": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": 1.3000000000000003,
+      "samples": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "LatentUpscaleBy",
+    "_meta": {
+      "title": "Mise à l'échelle Latente Par"
+    }
+  },
+  "36": {
+    "inputs": {
+      "noise_seed": 324051523393386
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "BruitAléatoire"
+    }
+  },
+  "45": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-API",
+      "images": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Enregistrer Image"
+    }
+  }
+}
