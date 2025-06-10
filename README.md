@@ -3,7 +3,7 @@
 Une application de bureau construite avec Electron pour faciliter le lancement et la gestion des workflows ComfyUI, incluant l'injection de prompts, d'images (pour img2img), la gestion des seeds, et le traitement par lot.
 
 
-[![screen-comfyui-loader.png](https://i.postimg.cc/0QkMDW6f/screen-comfyui-loader.png)](https://postimg.cc/4K0xT1Q7)
+https://i.postimg.cc/0QkMDW6f/screen-comfyui-loader.png
 
 
 
