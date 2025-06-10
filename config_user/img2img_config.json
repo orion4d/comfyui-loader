@@ -1,9 +1,0 @@
-{
-  "comfyUrl": "http://127.0.0.1:8188",
-  "promptNodeId": "19",
-  "promptInputName": "text",
-  "imageNodeId": "16",
-  "imageInputName": "image",
-  "seedNodeId": "23",
-  "seedInputName": "seed"
-}
