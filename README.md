@@ -38,6 +38,13 @@ Une application de bureau construite avec Electron pour faciliter le lancement e
 - **Via ComfyUI‑Manager** : installez ce plugin dans `custom_nodes`, activez l’option *Badge* ou *Node ID display* dans le menu “Manager”, et visualisez directement l’ID sur chaque node.
 - **Via une recherche dans JSON ou les logs** : en cas d’erreur (ex : `invalid_prompt`), repérez l’ID reporté (`Node ID '#84'`), puis faites un “Ctrl+F "id": 84” dans le JSON.
 
+### Note sur les Formats de Workflow
+
+L'application est conçue pour fonctionner de manière optimale avec les fichiers de workflow JSON sauvegardés directement depuis l'interface ComfyUI via "Enregistrer" ou "Enregistrer sous". Ces fichiers représentent directement le graphe des nœuds.
+
+Si vous utilisez un fichier généré par l'option "Exporter (API)" de ComfyUI, l'application tentera d'extraire le graphe de la structure API. Cependant, pour une compatibilité maximale et pour éviter toute ambiguïté, il est **recommandé d'utiliser les fichiers au format UI standard ("Enregistrer"/"Enregistrer sous")** lorsque vous les chargez dans cette application.
+
+Si vous rencontrez des problèmes où un mauvais workflow semble s'exécuter, assurez-vous que le fichier JSON que vous chargez est bien le graphe direct des nœuds.
 
 ## Installation
 
